@@ -1,0 +1,25 @@
+.postList {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+    row-gap: 50px;
+}
+
+.deleteBtn {
+    background-color: rgb(248, 33, 33);
+}
+
+.editBtn {
+    background-color: rgb(27, 148, 248);
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+}
+
+.ml {
+    margin-left: 1rem;
+}
