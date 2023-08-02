@@ -5,9 +5,11 @@ const Post = model.Post;
 exports.getAllPosts = async (req, res) => {
   // res.status(200).send('Hello');
   const query = Post.find();
+  const pageSize = 4;
+  const page = req.query.page;
   console.log(req.query);
   if(req.query && req.query.sort) {
-    const posts = await query.sort({[req.query.sort]: req.query.order}).limit(req.query.limit).exec();
+    const posts = await query.sort({[req.query.sort]: req.query.order}).skip(pageSize*(page-1)).limit(pageSize).exec();
     res.json(posts);
   } else {
     const posts = await query.exec();
